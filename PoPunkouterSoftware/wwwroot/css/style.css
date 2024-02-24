@@ -1,0 +1,128 @@
+/* Reset some basic elements */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header and Navigation Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+/* Main content styles */
+main {
+    margin-top: 20px;
+}
+
+#gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rotating-image {
+    max-width: 100%;
+    margin: 10px;
+    display: block; /* Change to none; using JS to display images */
+}
+
+#team article {
+    margin-bottom: 20px;
+}
+
+#team img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .logo {
+        max-width: 150px;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-left: 30px;
+    }
+
+    #gallery {
+        justify-content: space-around;
+    }
+
+    #team article {
+        display: flex;
+        align-items: center;
+    }
+
+    #team img {
+        max-width: 50%;
+    }
+
+    #team h2, #team p {
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        max-width: 960px;
+        margin: auto;
+    }
+
+    header {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+}
+ 
+.rotating-image {
+    /* Existing styles */
+    opacity: 1; /* Ensure images are fully visible by default */
+}
+
+.team-member img {
+    width: 400px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    object-fit: cover; /* This ensures the aspect ratio is maintained without distorting the image */
+}
