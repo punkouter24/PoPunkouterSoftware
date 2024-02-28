@@ -1,7 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const images = document.querySelectorAll('.rotating-image');
-    images[0].style.display = 'block'; // Ensure first image is visible
+    if (images.length > 0) images[0].style.display = 'block'; // Ensure first image is visible
     let currentImage = 0;
+
+    fetch('navigation.html')
+        .then(response => response.text())
+        .then(text => document.getElementById('navigation-placeholder').innerHTML = text);
 
     // Initially hide all images except the first one
     images.forEach((img, index) => {
