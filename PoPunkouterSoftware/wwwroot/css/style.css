@@ -14,7 +14,7 @@ body {
 /* Header and Navigation Styles */
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 10px 0;
 }
@@ -22,6 +22,8 @@ header {
 nav ul {
     list-style: none;
     display: flex;
+    flex-direction: column; /* Change to row on larger screens */
+    align-items: center;
 }
 
 nav ul li {
@@ -77,6 +79,7 @@ footer {
 
     nav ul {
         padding: 0;
+        flex-direction: row;
     }
 
     nav ul li {
