@@ -16,6 +16,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Ensure this is set */
+    width: 100%; /* Ensure full width */
     padding: 10px 0;
 }
 
@@ -24,6 +26,10 @@ nav ul {
     display: flex;
     flex-direction: column; /* Change to row on larger screens */
     align-items: center;
+    justify-content: center; /* Add this line */
+    width: auto; /* Adjust width to fit content */
+    margin: 0 auto; /* Center the ul within the nav */
+    margin-left: -20px; /* Move the ul 10 pixels to the left */
 }
 
 nav ul li {
@@ -54,6 +60,7 @@ main {
     max-width: 100%;
     margin: 10px;
     display: block; /* Change to none; using JS to display images */
+    opacity: 1; /* Ensure images are fully visible by default */
 }
 
 #team article {
@@ -78,8 +85,9 @@ footer {
     }
 
     nav ul {
-        padding: 0;
+        padding: 30px;
         flex-direction: row;
+        justify-content: center; /* Ensure this remains set */
     }
 
     nav ul li {
@@ -119,11 +127,6 @@ footer {
     }
 }
  
-.rotating-image {
-    /* Existing styles */
-    opacity: 1; /* Ensure images are fully visible by default */
-}
-
 .team-member img {
     width: 400px; /* Adjust the width as needed */
     height: 400px; /* Adjust the height as needed */
