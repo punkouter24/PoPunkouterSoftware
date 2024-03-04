@@ -132,3 +132,17 @@ footer {
     height: 400px; /* Adjust the height as needed */
     object-fit: cover; /* This ensures the aspect ratio is maintained without distorting the image */
 }
+.testimonial {
+    display: flex;
+    align-items: center; /* This ensures that the items are vertically centered */
+    justify-content: space-between; /* This adds space between the video and the text */
+    gap: 20px; /* This adds some space between the video and the text */
+}
+
+.testimonial video {
+    flex: 1; /* Allows the video to grow and take up available space */
+}
+
+.testimonial p {
+    flex: 2; /* Allows the text to take up twice as much space as the video */
+}

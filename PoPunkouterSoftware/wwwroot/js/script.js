@@ -28,8 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 500); // Match this delay with the CSS transition time
     }
 
-    // Set interval for rotating images
-    setInterval(rotateImage, 2000); // Change images every 2 seconds
+    // Check if current page is index.html before setting interval
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+        // Set interval for rotating images
+        setInterval(rotateImage, 2000); // Change images every 2 seconds
+    }
 
     // Optional: Add CSS transitions for smooth fading
     images.forEach(img => {
