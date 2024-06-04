@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe - Punkouter Software</title>
+    <style>
+       .board {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 10px;
+            width: 360px;
+            margin: 0 auto;
+        }
+       .cell {
+            width: 60px;
+            height: 60px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+       .cell:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Punkouter Software Logo" class="logo">
+        <div id="navigation-placeholder"></div>
+    </header>
+    <main>
+        <h1>Tic Tac Toe</h1>
+        <div class="board">
+            <div class="cell" id="cell-0"></div>
+            <div class="cell" id="cell-1"></div>
+            <div class="cell" id="cell-2"></div>
+            <div class="cell" id="cell-3"></div>
+            <div class="cell" id="cell-4"></div>
+            <div class="cell" id="cell-5"></div>
+            <div class="cell" id="cell-6"></div>
+            <div class="cell" id="cell-7"></div>
+            <div class="cell" id="cell-8"></div>
+            <div class="cell" id="cell-9"></div>
+            <div class="cell" id="cell-10"></div>
+            <div class="cell" id="cell-11"></div>
+            <div class="cell" id="cell-12"></div>
+            <div class="cell" id="cell-13"></div>
+            <div class="cell" id="cell-14"></div>
+            <div class="cell" id="cell-15"></div>
+            <div class="cell" id="cell-16"></div>
+            <div class="cell" id="cell-17"></div>
+            <div class="cell" id="cell-18"></div>
+            <div class="cell" id="cell-19"></div>
+            <div class="cell" id="cell-20"></div>
+            <div class="cell" id="cell-21"></div>
+            <div class="cell" id="cell-22"></div>
+            <div class="cell" id="cell-23"></div>
+            <div class="cell" id="cell-24"></div>
+            <div class="cell" id="cell-25"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Punkouter Software. All rights reserved.</p>
+    </footer>
+    <script>
+        const cells = document.querySelectorAll('.cell');
+        let currentPlayer = 'X';
+        let gameOver = false;
+
+        cells.forEach((cell, index) => {
+            cell.addEventListener('click', () => {
+                if (cell.textContent === '' &&!gameOver) {
+                    cell.textContent = currentPlayer;
+                    if (checkWin(currentPlayer)) {
+                        alert(`Player ${currentPlayer} wins!`);
+                        resetGame();
+                    } else if (isBoardFull()) {
+                        alert('It\'s a tie!');
+                        resetGame();
+                    } else {
+                        currentPlayer = currentPlayer === 'X'? 'O' : 'X';
+                    }
+                }
+            });
+        });
+
+        function checkWin(player) {
+            const winningCombinations = [
+                [0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15], [16, 17, 18, 19], [20, 21, 22, 23],
+                [0, 4, 8, 12], [1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], [16, 20, 24, 28], [17, 21, 25, 29],
+                [18, 22, 26, 30], [19, 23, 27, 31], [0, 5, 10, 15], [1, 6, 11, 16], [2, 7, 12, 17], [3, 8, 13, 18],
+                [4, 9, 14, 19], [5, 10, 15, 20], [6, 11, 16, 21], [7, 12, 17, 22], [8, 13, 18, 23], [9, 14, 19, 24],
+                [10, 15, 20, 25], [11, 16, 21, 26], [12, 17, 22, 27], [13, 18, 23, 28], [14, 19, 24, 29], [15, 20, 25, 30]
+            ];
+
+            for (const combination of winningCombinations) {
+                const [a, b, c, d] = combination;
+                if (cells[a].textContent === player && cells[b].textContent === player && cells[c].textContent === player && cells[d].textContent === player) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        function isBoardFull() {
+            for (const cell of cells) {
+                if (cell.textContent === '') {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function resetGame() {
+            cells.forEach((cell) => {
+                cell.textContent = '';
+            });
+            currentPlayer = 'X';
+            gameOver = false;
+        }
+    </script>
+</body>
+</html>
