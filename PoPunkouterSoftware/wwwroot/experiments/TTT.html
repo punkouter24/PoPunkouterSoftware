@@ -34,10 +34,12 @@
         const cols = 6;
         const winLength = 4;
         let currentPlayer = 'X';
-        const board = [];
+        let board = [];
 
         function createBoard() {
             const boardTable = document.getElementById('board');
+            boardTable.innerHTML = ''; // Clear the board
+            board = []; // Reset the board array
             for (let i = 0; i < rows; i++) {
                 const row = [];
                 const tr = document.createElement('tr');
@@ -107,10 +109,9 @@
         }
 
         function resetGame() {
-            board = board.map(() => Array(cols).fill(''));
             currentPlayer = 'X';
             document.getElementById('message').innerText = '';
-            updateBoard();
+            createBoard();
         }
 
         document.getElementById('resetButton').addEventListener('click', resetGame);

@@ -148,3 +148,37 @@ footer {
 .testimonial p {
     flex: 2; /* Allows the text to take up twice as much space as the video */
 }
+
+/* Add styles for the experiments page */
+.experiments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.experiments-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.experiments-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.experiments-container a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.experiments-container a:hover {
+    background-color: #0056b3;
+}
